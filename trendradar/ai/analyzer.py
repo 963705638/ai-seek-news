@@ -207,12 +207,12 @@ class AIAnalyzer:
         # 识别 Markdown 代码块
         if "```json" in json_str:
             try:
-                json_str = json_str.split("```json")[1].split("```")[0]
+                json_str = response.split('```json')[1].split(' ```')[0]
             except Exception:
                 pass
         elif "```" in json_str:
             try:
-                json_str = json_str.split("```")[1].split("```")[0]
+                json_str = response.split('```json')[1].split(' ```')[0]
             except Exception:
                 pass
 
