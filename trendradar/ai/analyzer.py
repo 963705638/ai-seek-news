@@ -16,29 +16,23 @@ from trendradar.ai.prompt_loader import load_prompt_template
 
 @dataclass
 class AIAnalysisResult:
-    """AI 分析结果"""
-    # 新版 5 核心板块
-    core_trends: str = ""                # 核心热点与舆情态势
-    sentiment_controversy: str = ""      # 舆论风向与争议
-    signals: str = ""                    # 异动与弱信号
-    rss_insights: str = ""               # RSS 深度洞察
-    outlook_strategy: str = ""           # 研判与策略建议
-    standalone_summaries: Dict[str, str] = field(default_factory=dict)  # 独立展示区概括 {源ID: 概括}
-
+    """AI 分析结果 - 选题提报定制版"""
+    # 核心内容：现在统一存储在 byd_report 中，包含选题方向、核心观点、标题、链接等
+    byd_report: str = ""                
+    
     # 基础元数据
     raw_response: str = ""               # 原始响应
     success: bool = False                # 是否成功
-    skipped: bool = False                # 是否因无内容跳过（非失败）
+    skipped: bool = False                # 是否因无内容跳过
     error: str = ""                      # 错误信息
 
     # 新闻数量统计
-    total_news: int = 0                  # 总新闻数（热榜+RSS）
-    analyzed_news: int = 0               # 实际分析的新闻数
-    max_news_limit: int = 0              # 分析上限配置值
-    hotlist_count: int = 0               # 热榜新闻数
-    rss_count: int = 0                   # RSS 新闻数
-    ai_mode: str = ""                    # AI 分析使用的模式 (daily/current/incremental)
-
+    total_news: int = 0                  
+    analyzed_news: int = 0               
+    max_news_limit: int = 0              
+    hotlist_count: int = 0               
+    rss_count: int = 0                   
+    ai_mode: str = ""
 
 class AIAnalyzer:
     """AI 分析器"""
