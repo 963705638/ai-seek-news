@@ -206,8 +206,7 @@ class AIAnalyzer:
         if "```json" in response:
             json_str = response.split("```json")[1].split("```")[0]
         elif "```" in response:
-            json_str = response.split("
-```")[1].split("```")[0]
+            json_str = response.split("```")[1].split("```")[0]
 
         json_str = json_str.strip()
         
