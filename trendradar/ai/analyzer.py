@@ -201,12 +201,20 @@ class AIAnalyzer:
             result.error = "AI 返回空响应"
             return result
 
-        # 提取 JSON
-        json_str = response
-        if "```json" in response:
-            json_str = response.split("```json")[1].split("```")[0]
-        elif "```" in response:
-            json_str = response.split("```")[1].split("```")[0]
+# 提取 JSON 逻辑 - 修复了引号断行问题
+        json_str = response.strip()
+        
+        # 识别 Markdown 代码块
+        if "```json" in json_str:
+            try:
+                json_str = json_str.split("```json")[1].split("```")[0]
+            except Exception:
+                pass
+        elif "```" in json_str:
+            try:
+                json_str = json_str.split("```")[1].split("```")[0]
+            except Exception:
+                pass
 
         json_str = json_str.strip()
         
