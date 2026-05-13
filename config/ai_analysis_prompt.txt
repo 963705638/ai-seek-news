@@ -177,7 +177,7 @@
   "rss_insights": "（按上述板块说明写法输出）",
   "outlook_strategy": "（按上述板块说明写法输出）",
   "standalone_summaries": {"知乎": "100字概括，优先列前5板块未提及的话题及排名走势", "Hacker News": "100字概括..."},
-  "topic_briefing_new": "（周一~周三、周五输出，其余置空；按选题提报要求中的四段结构填写）",
+  "topic_briefing_new": "（周一~周三、周五输出，其余置空；必须严格按照：\n选题名称：xxx\n一、选题方向：xxx\n二、核心观点：xxx\n三、参考标题：xxx\n四、参考链接：xxx\n的文本格式输出，段落间用\\n换行）",
   "weekly_summary": "（仅周四输出，其余置空；按选题提报要求中的汇总格式填写）",
   "saturday_sunday_preview": "（仅周六、周日输出，其余置空；格式同 topic_briefing_new，开头标注“（周末发现）”）"
 }
