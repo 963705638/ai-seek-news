@@ -57,6 +57,8 @@ platforms:
   sources:
     - id: "toutiao"
       name: "今日头条"
+    - id: "xueqiu"
+      name: "雪球"
     - id: "baidu"
       name: "百度热搜"
     - id: "wallstreetcn-hot"
